@@ -32,7 +32,7 @@ registerForm.addEventListener('submit', async(e)=>{
   try {
     const endpoint = 'auth/register';
     await postData(endpoint,newUser);
-    window.location.href = 'index.html'; // Redirect to product page
+    window.location.href = "index.html"; // Redirect to product page
   } catch (error) {
     console.error('Error during registration:', error);
   }
