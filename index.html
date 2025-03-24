@@ -4,16 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/shared/general.css">
+  <link rel="stylesheet" href="css/shared/header.css">
+
+  <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
-  <header>
-    <h1>Product List</h1>
-    <a href="register.html">Register</a>
-  </header>
 
-  <div id="product-container">
+  <div class="header">
+    <div class="OnlineStoreLogo">
+      <a class="OnlineStoreLink" href="index.html">
+        <span class="onlineStore">Online Store</span>
+      </a>
+    </div>
+    <div class="searchBar">
+      <input class="searchInput" type="text" placeholder="Search">
+      <img class="search-icon" src="images/icons/search-icon.png">
+    </div>
+    <div class="returnsAndOrders">
+      <a class="orderLink" href="orders.html">
+        <span class="returns">Returns</span>
+        <span class="orders">& Orders</span>
+      </a>
+    </div>
+    <div class="cart">
+      <a class="cartLink" href="carts.html">
+        <img class="cart-icon" src="images/icons/cart-icon.png">
+        <div class="cart-quantity">0</div>
+        <div class="cart-text">Cart</div>
+      </a>
+    </div>
 
+    <div class="registerLink">
+      <a class="register" href="register.html">
+        <span class="login">Login</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="product-container" id="product-container"></div>
   </div>
 
   <script src="js/api.js"></script>

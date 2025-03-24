@@ -1,0 +1,105 @@
+.header{
+  background-color: rgb(19, 25, 33);
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+.OnlineStoreLink{
+  color: rgb(235, 113, 52);
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.searchBar{
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+.searchInput{
+  width: 200px;
+  height: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+.searchInput:focus{
+  outline: 2px solid rgb(247, 191, 165);
+}
+.search-icon{
+  background-color: rgb(235, 113, 52) ;
+  height: 20px;
+  padding: 5px;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+  }
+  
+  .returnsAndOrders{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  .orderLink{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .orderLink:hover{
+    border: 1px solid white;
+  }
+  .returns{
+    display: block;
+  }
+  .orders{
+    display: block;
+    font-size: 14px;
+  }
+
+  .cart{
+    margin-right: 15px;
+  }
+  .cartLink{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .cart-icon{
+    height: 35px;
+  }
+  .cart-quantity{
+    color: rgb(235, 113, 52);
+    position: absolute;
+    top: 2px;
+    left: 25px;
+
+  }
+  .cart-text{
+    color: white;
+    margin-top: 15px;
+  }
+
+  .register{
+    text-decoration: none;
+  }
+  .login{
+    color: white;
+  }
