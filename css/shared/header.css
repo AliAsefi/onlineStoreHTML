@@ -80,11 +80,16 @@
   .cart{
     margin-right: 25px;
   }
+
   .cartLink{
     text-decoration: none;
     display: flex;
     justify-content: center;
     position: relative;
+  }
+  .cartLink:hover{
+    border: 1px solid white;
+    padding: 5px;
   }
   .cart-icon{
     height: 35px;

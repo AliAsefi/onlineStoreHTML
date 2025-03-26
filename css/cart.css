@@ -1,0 +1,12 @@
+.product-image{
+  height: 100px;
+}
+.cartItemList{
+  display: flex;
+  flex-direction: column;
+}
+
+.itemDiv{
+  display: flex;
+  flex-direction: row;
+}

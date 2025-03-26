@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login</title>
+    <title>Cart</title>
     <link href="css/shared/general.css" rel="stylesheet" />
     <link href="css/shared/header.css" rel="stylesheet" />
-    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet" />
 
 </head>
 
@@ -38,40 +38,21 @@
             </a>
         </div>
 
-        <div class="registerLink">
-            <a class="register" href="register.html">
-            <span class="login">Login</span>
+        <div class="loginLogout">
+            <div class="welcome">Welcome</div>
+            <a class="login" href="login.html">
+              <span class="loginSpan">Login</span>
             </a>
-        </div>
+            <a class="logout" href="index.html" style="display: none;" >
+              <span class="logoutSpan">Logout</span>
+            </a>      
+          </div>
     </div>
 
-    <div class="content">
-        <form id="login-form">
-            <div class="welcome">Welcome to your <br><span class="on">Online Store</span></div>
-            <div class="username">
-                <label for="username" class="screenreader">Username</label><br>
-                <input type="text" id="username" class="input" name="username" placeholder="Username" required autofocus>
-            </div>
-            <div class="password">
-                <label for="password" class="screenreader">Password</label><br>
-                <input type="password" id="password" class="input" name="password" placeholder="Password" required>
-            </div>
-            <div class="signIn">
-                <button type="submit" class="signInBtn">Sign in</button>
-             </div>
-            <div class="register">
-                Don't have an Acconut? 
-                <span>
-                    <a class="registerLink" href="register.html">
-                        Register here
-                    </a>
-                </span>
-            </div>
-        </form>
-    </div>
-
+    <div class="cartItemList"></div>
+    
     <script src="js/api.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/cart.js"></script>
 
 </body>
 
