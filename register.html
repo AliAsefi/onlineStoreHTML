@@ -4,41 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
+  <link href="css/register.css" rel="stylesheet" />
+  <link href="css/shared/general.css" rel="stylesheet" />
+  <link href="css/shared/header.css" rel="stylesheet" />
 </head>
 <body>
-  
-  <form id="register-form">
-    <label for="firstName">First name:</label>
-    <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
-    <label for="lastName">Last name:</label>
-    <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
-    <label for="username">username:</label>
-    <input type="text" name="username" id="username" placeholder="Username" required />
-    <label for="email">E-Mail:</label>
-    <input type="email" name="email" id="email" placeholder="Email" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" placeholder="Password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required>
-    <label for="phone">Phone:</label>
-    <input type="tel" name="phone" id="phone" placeholder="Phone" required />
-    <label for="birthDate">Date of birth:</label>
-    <input type="date" name="birthDate" id="birthDate" placeholder="birthDate" required />
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender" required>
-      <option value="">Select gender</option>
-      <option value="MALE">Male</option>
-      <option value="FEMALE">Female</option>
-      <option value="OTHER">Other</option>
-    </select>
+  <div class="header">
+    <div class="OnlineStoreLogo">
+      <a class="OnlineStoreLink" href="index.html">
+        <span class="onlineStore">Online Store</span>
+      </a>
+    </div>
+    <div class="searchBar">
+      <input class="searchInput" type="text" placeholder="Search">
+      <img class="search-icon" src="images/icons/search-icon.png">
+    </div>
+    <div class="returnsAndOrders">
+      <a class="orderLink" href="orders.html">
+        <span class="returns">Returns</span>
+        <span class="orders">& Orders</span>
+      </a>
+    </div>
+    <div class="cart">
+      <a class="cartLink" href="carts.html">
+        <img class="cart-icon" src="images/icons/cart-icon.png">
+        <div class="cart-quantity">0</div>
+        <div class="cart-text">Cart</div>
+      </a>
+    </div>
 
-    
-    <div id="addressSection">
-      <input type="text" id="address" name="addressList[0].address" placeholder="Street" required />
-      <input type="text" id="country" name="addressList[0].country" placeholder="Country" required />
-      <input type="text" id="city" name="addressList[0].city" placeholder="City" required />
-      <input type="text" id="state" name="addressList[0].state" placeholder="State" required />
-      <input type="text" id="postalCode" name="addressList[0].postalCode" placeholder="Postal Code" required />
+    <div class="registerLink">
+      <a class="register" href="login.html">
+        <span class="login">Login</span>
+      </a>
+    </div>
+  </div>
+
+  <form id="register-form">
+    <div class="registrationContainer">
+      <div class="RegistrationForm">Registration Form</div>
+      <div>Fill out the form carefully for registration</div>
+    </div>
+    <div class="nameContainer">
+      <div>
+        <label for="firstName">First name:</label><br>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
+      </div>
+      <div>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+      </div>
+    </div>
+    <div>
+      <label for="username">username:</label><br>
+      <input type="text" name="username" id="username" placeholder="Username" required />
+    </div>
+    <div class="phoneContainer">
+      <div>
+        <label for="email">E-Mail:</label><br>
+        <input type="email" name="email" id="email" placeholder="Email" required />
+      </div>
+      <div>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" name="phone" id="phone" placeholder="Phone" required />
+      </div>
+    </div>
+    <div class="birthContainer">
+      <div>
+        <label for="birthDate">Date of birth:</label><br>
+        <input type="date" name="birthDate" id="birthDate" placeholder="birthDate" required />
+      </div>
+      <div>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" required>
+          <option value="">Select gender</option>
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
+          <option value="OTHER">Other</option>
+        </select><br>
+      </div>
+    </div>
+    <div class="passwordContainer">
+      <div>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Password" required />
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+    </div>
+
+    <div id="addressSection"> Address<br>
+      <input type="text" id="address" name="addressList[0].address" placeholder="Street" required /><br>
+      <div class="countryContainer">
+        <input type="text" id="country" name="addressList[0].country" placeholder="Country" required /><br>
+        <input type="text" id="city" name="addressList[0].city" placeholder="City" required /><br>
+      </div>
+      <div class="stateContainer">
+        <input type="text" id="state" name="addressList[0].state" placeholder="State" required /><br>
+        <input type="text" id="postalCode" name="addressList[0].postalCode" placeholder="Postal Code" required /><br>
+      </div>
     </div>
 
     <button type="submit">Register</button>

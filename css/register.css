@@ -1,0 +1,65 @@
+body form{
+  font-size: 12px;
+  padding: 20px;
+}
+
+form input{
+  width: 150px;
+  height: 17px;
+  border-radius: 6px;
+  border: 1px solid rgb(179, 176, 176);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form button{
+  width: 335px;
+  height: 25px;
+  border-radius: 6px;
+  border: none;
+  padding: 5px;
+  background-color: rgb(235, 113, 52);
+  color: white;
+}
+
+.registrationContainer{
+  margin-bottom: 20px;
+}
+.RegistrationForm{
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.nameContainer {
+  display: flex;
+  gap: 10px;
+}
+.phoneContainer{
+  display: flex;
+  gap: 10px;
+}
+
+.birthContainer{
+  display: flex;
+  gap: 10px;
+}
+#gender{
+  font-size: 12px;
+}
+.passwordContainer{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+#address{
+  width: 323px;
+}
+.countryContainer{
+  display: flex;
+  gap: 5px;
+}
+.stateContainer{
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}

@@ -7,24 +7,66 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Please sign in</title>
+    <link href="css/shared/general.css" rel="stylesheet" />
+    <link href="css/shared/header.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+
 </head>
 
 <body>
+    <div class="header">
+        <div class="OnlineStoreLogo">
+            <a class="OnlineStoreLink" href="index.html">
+            <span class="onlineStore">Online Store</span>
+            </a>
+        </div>
+        <div class="searchBar">
+            <input class="searchInput" type="text" placeholder="Search">
+            <img class="search-icon" src="images/icons/search-icon.png">
+        </div>
+        <div class="returnsAndOrders">
+            <a class="orderLink" href="orders.html">
+            <span class="returns">Returns</span>
+            <span class="orders">& Orders</span>
+            </a>
+        </div>
+        <div class="cart">
+            <a class="cartLink" href="carts.html">
+            <img class="cart-icon" src="images/icons/cart-icon.png">
+            <div class="cart-quantity">0</div>
+            <div class="cart-text">Cart</div>
+            </a>
+        </div>
+
+        <div class="registerLink">
+            <a class="register" href="register.html">
+            <span class="login">Login</span>
+            </a>
+        </div>
+    </div>
+
     <div class="content">
         <form id="login-form">
-            <h2>Please sign in</h2>
-            <p>
-                <label for="username" class="screenreader">Username</label>
-                <input type="text" id="username" name="username" placeholder="Username" required autofocus>
-            </p>
-            <p>
-                <label for="password" class="screenreader">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </p>
-
-            <button type="submit" class="primary">Sign in</button>
+            <div class="welcome">Welcome to your <br><span class="on">Online Store</span></div>
+            <div class="username">
+                <label for="username" class="screenreader">Username</label><br>
+                <input type="text" id="username" class="input" name="username" placeholder="Username" required autofocus>
+            </div>
+            <div class="password">
+                <label for="password" class="screenreader">Password</label><br>
+                <input type="password" id="password" class="input" name="password" placeholder="Password" required>
+            </div>
+            <div class="signIn">
+                <button type="submit" class="signInBtn">Sign in</button>
+             </div>
+            <div class="register">
+                Don't have an Acconut? 
+                <span>
+                    <a class="registerLink" href="register.html">
+                        Register here
+                    </a>
+                </span>
+            </div>
         </form>
     </div>
 

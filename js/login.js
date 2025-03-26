@@ -10,10 +10,15 @@ loginForm.addEventListener('submit', async(e)=>{
 
   try {
     const endpoint = 'auth/login';
-    await postData(endpoint,user);
-    window.location.href = 'index.html'; // Redirect to product page
+    const response = await postData(endpoint,user);
+
+      //Save User Info in Local Storage
+      localStorage.setItem('token',response.token); //Store JWT token
+      localStorage.setItem('userData',JSON.stringify(response.userDto)); //Store user details
+      window.location.href = 'index.html';
+
   } catch (error) {
     console.error('Error during login:', error);
   }
 
-})
+});

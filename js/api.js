@@ -8,7 +8,25 @@ async function fetchData(endpoint) {
     const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+        }
+    });
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    return await response.json();
+} catch (error) {
+    console.error("Fetch error:", error);
+    return [];
+}
+}
+
+// Generic GET request with token
+async function fetchDataWithToken(endpoint,token) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
         }
     });
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
@@ -21,9 +39,6 @@ async function fetchData(endpoint) {
 
 // Generic POST request
 async function postData(endpoint, data) {
-  //console.log("Sending POST to: ", `${API_BASE_URL}/${endpoint}`); 
-  // ✅ Debugging log
-  //console.log("POST Data: ", data); // ✅ Debugging log
 
   const response = await fetch(`${API_BASE_URL}/${endpoint}`, { 
       method: "POST",
@@ -34,7 +49,8 @@ async function postData(endpoint, data) {
   if (!response.ok){
     console.error("POST faild with status: ", response.status);
   }
-  return response.json();
+  
+  return await response.json(); // Return the response in JSON format
 
   /*
   Check the Console logs:

@@ -101,9 +101,21 @@
     margin-top: 15px;
   }
 
-  .register{
+  .login{
     text-decoration: none;
   }
-  .login{
-    color: white;
+  .loginSpan{
+    color: rgb(235, 113, 52);
+    font-size: 15px;
+  }
+
+  .logout{
+    text-decoration: none;
+  }
+  .logoutSpan{
+    color: rgb(235, 113, 52);
+    font-size: 15px;
+  }
+  .welcome{
+    font-weight: bold;
   }
