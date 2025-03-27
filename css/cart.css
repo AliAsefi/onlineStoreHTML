@@ -1,12 +1,79 @@
-.product-image{
-  height: 100px;
-}
 .cartItemList{
   display: flex;
   flex-direction: column;
 }
-
+.totalPriceContainer{
+  margin: 15px;
+  margin-left: 275px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(194, 187, 187);
+  max-width: 285px;
+}
+.totalPriceText{
+  padding: 5px;
+}
+.totalCartPrice{
+  padding: 5px;
+  color: rgb(229, 88, 17);
+  text-decoration: underline ;
+  margin-left: 20px;
+}
 .itemDiv{
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid rgb(194, 191, 191);
+  padding: 5px;
+  margin: 5px;
+  max-width: 550px;
+}
+.imageContainer{
+  height: 100px;
+
+}
+.product-image{
+  height: 100%;
+  width: 100%;
+}
+.productName{
+  padding: 5px;
+  margin: 5px;
+  align-content: center;
+  width: 150px;
+}
+.calculationcontainer{
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+}
+.calculationcontainer span{
+  float: right;
+}
+.productQuantity{
+
+}
+.pricePerUnit{
+  border-bottom: 1px solid rgb(218, 214, 214);
+  margin-bottom: 7px;
+}
+.discountPercentage{
+  margin-bottom: 4px;
+
+}
+.totalPrice{
+  font-weight: bold;
+}
+.deleteCartItem{
+  align-content: center;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+.deleteCartItemBtn{
+  border: none;
+  background-color: white;
+  color: rgb(162, 7, 7);
+  font-size: 12px;
+
 }

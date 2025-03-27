@@ -1,3 +1,6 @@
+let userData = null;
+let totalCartQuantity = 0;
+
 //Logout
 document.querySelector('.logout').addEventListener('click',()=>{
   localStorage.removeItem("token");
@@ -70,12 +73,14 @@ document.addEventListener('DOMContentLoaded', async()=> {
         const button = productDiv.querySelector('.jsAddToCartBtn');
           button.addEventListener('click', ()=>{
             const quantitySelect = productDiv.querySelector('.quantity-select');
+            const productId = button.dataset.productId;
             const quantity = parseInt(quantitySelect.value);
             button.textContent = 'added';
-            updateCartQuantity(quantity);
+
+            // Add to cart in backend
+            addToCart(productId, quantity);
           })
     });
-
   } catch (error) {
     console.error('Error fetching products:', error);
   }
@@ -97,10 +102,10 @@ function toggleDescription(button){
 
 //----------------------------------------------
 // change login and logout
-const user = localStorage.getItem('token');
+token = localStorage.getItem('token');
 const loginSpan = document.querySelector('.login');
 const logoutSpan = document.querySelector('.logout');
-if(user){
+if(token){
   loginSpan.style.display = 'none';
   logoutSpan.style.display = 'block';
 }
@@ -113,7 +118,7 @@ async function fetchUserDataWithToken() {
   if(token){
     try {
       const endPoint = "users/me";
-      const userData = await fetchDataWithToken(endPoint,token);
+      userData = await fetchDataWithToken(endPoint,token);
       welcome.textContent = `Hi ${userData.firstName}`;
       console.log(userData);
 
@@ -132,9 +137,24 @@ async function fetchUserDataWithToken() {
 fetchUserDataWithToken();
 
 //---------------------------------------------------
-// update quantity number
-let totalCartQuantity = 0;
-function updateCartQuantity(quantity){
-  totalCartQuantity += quantity;
-  document.querySelector('.cart-quantity').textContent = totalCartQuantity;
+// add to cart 
+async function addToCart(productId, quantity){
+  token = localStorage.getItem('token');
+  const endPoint = `carts/create/${userData.id}`;
+  if(userData && token){
+    if(userData.cart){
+      const newCart = {
+        cartId: userData.cart ? userData.cart.id : null,
+        productId: productId,
+        quantity : quantity
+      }
+      try {
+         await postDataWithToken(endPoint,newCart,token);
+          // re-fetch cart data
+          fetchUserDataWithToken(); 
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      }
+    }
+  }
 }

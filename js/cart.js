@@ -41,12 +41,18 @@ async function fetchUserDataWithToken() {
 // Fetch Cart Item List
 document.addEventListener('DOMContentLoaded', async()=> {
   await fetchUserDataWithToken();
+  const token = localStorage.getItem("token");
   const cartItemList = document.querySelector('.cartItemList');
   try {
     cartItemList.innerHTML = ""; // Clear previous items
-    cartItemList.innerHTML = `
-      <div class="totalCartPrice">${(cart.totalCartPrice).toFixed(2)}</div>
+    if(cartItems.length != 0){
+      cartItemList.innerHTML = `
+      <div class="totalPriceContainer">
+        <div class="totalPriceText">Total Price:</div>
+        <div class="totalCartPrice">${(cart.totalCartPrice).toFixed(2)} €</div>
+      </div>
     `;
+    }
     for(const item of cartItems){
       const itemDiv = document.createElement('div');
       itemDiv.classList.add('itemDiv');
@@ -58,13 +64,21 @@ document.addEventListener('DOMContentLoaded', async()=> {
             <img class="product-image" src="${product.image}">
           </div>
           <div class="productName">${product.name}</div>
-          <div class="productQuantity">${item.quantity}</div>
-          <div class="pricePerUnit">${item.pricePerUnit}</div>
-          <div class="discountPercentage">${item.discountPercentage}</div>
-          <div class="totalPrice>${item.totalPrice}</div>
+          <div class="calculationcontainer">
+            <div class="productQuantity">Quantity: <span>${item.quantity}</span></div>
+            <div class="pricePerUnit">Price: <span>${item.pricePerUnit}</span></div>
+            <div class="discountPercentage">Discount: <span>%${item.discountPercentage}</span></div>
+            <div class="totalPrice">Total Price: <span>${(item.totalPrice).toFixed(2)} €</span></div>
+          </div>
+
+          <div class="deleteCartItem">
+            <button class="deleteCartItemBtn"
+            data-item-id="${item.id}">Delete Item</button>
+          </div>
         `;
+
       } catch (error) {
-        console.error("Error fetching product data:", productError);
+        console.error("Error fetching product data:", error);
       }
         cartItemList.appendChild(itemDiv);
       }
@@ -72,3 +86,21 @@ document.addEventListener('DOMContentLoaded', async()=> {
     console.error('Error fetching cartItemList:', error);
   }
 })
+
+document.addEventListener('click',(event)=>{
+    const itemId = event.target.dataset.itemId;
+    const endPoint = `cartItems/${itemId}`;
+    const token = localStorage.getItem("token");
+    deleteCartItem(endPoint,token);
+    window.location.reload();
+})
+
+async function deleteCartItem(endPoint,token) {
+  try {
+    await deleteDataWithToken(endPoint,token);
+    console.log(endPoint)
+    fetchUserDataWithToken();
+  } catch (error) {
+    console.error("Error deleting cartItem:", error);
+  }
+}

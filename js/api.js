@@ -37,6 +37,24 @@ async function fetchDataWithToken(endpoint,token) {
 }
 }
 
+// Generic POST request with token
+async function postDataWithToken(endpoint, data, token) {
+
+  const response = await fetch(`${API_BASE_URL}/${endpoint}`, { 
+      method: "POST",
+      headers: { 
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json" 
+      },
+      body: JSON.stringify(data)
+  });
+
+  if (!response.ok){
+    console.error("POST faild with status: ", response.status);
+  }
+  
+  return await response.json();
+}
 // Generic POST request
 async function postData(endpoint, data) {
 
@@ -83,6 +101,25 @@ async function deleteData(endpoint) {
   const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
+  });
+      // ✅ Check if the request was successful
+  if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+    // ✅ Use .text() instead of .json()
+  const result = await response.text();
+
+  return result;
+}
+
+// Generic DELETE request with token
+async function deleteDataWithToken(endpoint , token) {
+  const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+      method: "DELETE",
+      headers: { 
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json" }
   });
       // ✅ Check if the request was successful
   if (!response.ok) {
