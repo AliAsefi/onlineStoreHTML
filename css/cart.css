@@ -2,15 +2,20 @@
   display: flex;
   flex-direction: column;
 }
-.totalPriceContainer{
+.paymentContainer{
+  display: flex;
+  flex-direction: column;
   margin: 15px;
-  margin-left: 275px;
+  margin-left: 290px;
+  border-bottom: 1px solid rgb(194, 187, 187);
+  max-width: 270px;
+}
+.totalPriceContainer{
   display: flex;
   flex-direction: row;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
-  border-bottom: 1px solid rgb(194, 187, 187);
-  max-width: 285px;
+  margin-bottom: 10px;
 }
 .totalPriceText{
   padding: 5px;
@@ -21,6 +26,19 @@
   text-decoration: underline ;
   margin-left: 20px;
 }
+.paymentBtnContainer{
+
+}
+.paymentBtn{
+  border-radius: 30px;
+  border: none;
+  padding: 7px;
+  margin-bottom: 10px;
+  width: 180px;
+  background-color: rgb(244, 144, 94);
+  font-weight: bold;
+
+}
 .itemDiv{
   display: flex;
   flex-direction: row;
@@ -28,6 +46,9 @@
   padding: 5px;
   margin: 5px;
   max-width: 550px;
+}
+.checkbox{
+  margin-top: 29px;  
 }
 .imageContainer{
   height: 100px;

@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', async()=> {
           <div class="product-discountPercentage">
             <p>Discount: %${product.discountPercentage}</p>
           </div>
+          <div class="product-stockQuantity">
+            <p>In Stock: ${product.stockQuantity}</p>
+          </div>
           <div class="product-quantity-container">
             Quantity: <select class="quantity-select">
               <option selected value="1">1</option>
